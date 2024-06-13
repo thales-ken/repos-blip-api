@@ -1,6 +1,5 @@
 using Application.Services;
 using Domain.Interfaces;
-using Domain.Settings;
 using Infrastructure.Api;
 using RestEase;
 
@@ -14,10 +13,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton(RestClient.For<IGithubClient>("https://api.github.com"));
 builder.Services.AddScoped<IGithubService, GithubService>();
-var settings = builder.Configuration.GetSection("Settings").Get<CustomSettings>();
-#pragma warning disable CS8634 // O tipo não pode ser usado como parâmetro de tipo no tipo ou método genérico. A anulabilidade do argumento de tipo não corresponde à restrição 'class'.
-builder.Services.AddSingleton(settings);
-#pragma warning restore CS8634 // O tipo não pode ser usado como parâmetro de tipo no tipo ou método genérico. A anulabilidade do argumento de tipo não corresponde à restrição 'class'.
 
 var app = builder.Build();
 
