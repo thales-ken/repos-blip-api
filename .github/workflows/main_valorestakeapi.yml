@@ -3,6 +3,10 @@
 
 name: Build and deploy ASP.Net Core app to Azure Web App - valorestakeapi
 
+defaults:
+  run:
+    working-directory: ./Api/ValoresTakeApi
+
 on:
   push:
     branches:
