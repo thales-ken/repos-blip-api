@@ -1,9 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Domain.Entities;
 
 public class Owner
 {
-    [JsonPropertyName("avatar_url")]
+    [JsonProperty("avatar_url")]
     public string? AvatarUrl { get; set; }
 }

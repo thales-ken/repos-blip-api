@@ -1,18 +1,22 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Domain.Entities;
 
 public class GithubResponse
 {
-    [JsonPropertyName("name")]
-    public string? Name { get; set; }
+    [JsonProperty("full_name")]
+    public string? FullName { get; set; }
 
-    [JsonPropertyName("description")]
+    [JsonProperty("description")]
     public string? Description { get; set; }
 
-    [JsonPropertyName("language")]
-    public string Language { get; set; } = "";
+    [JsonProperty("created_at")]
+    public string? CreatedAt { get; set; }
 
-    [JsonPropertyName("owner")]
-    public Owner? Owner { get; set; }
+    [JsonProperty("language")]
+    public string Language { get; set; }
+
+    [JsonProperty("owner")]
+    public Owner Owner { get; set; }
 }

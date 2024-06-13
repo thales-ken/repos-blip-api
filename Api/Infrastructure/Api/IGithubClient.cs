@@ -3,6 +3,7 @@ using RestEase;
 
 namespace Infrastructure.Api;
 
+[Header("User-Agent", "Valores.Take.API")]
 public interface IGithubClient
 {
     [Header("Authorization")]

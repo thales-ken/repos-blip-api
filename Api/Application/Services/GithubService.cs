@@ -28,6 +28,6 @@ public class GithubService : IGithubService
         {
             return [];
         }
-        return response.Where(x => x.Language.Equals(CSHARP)).Take(FIRST_FIVE_REPOS).ToList();
+        return response.Where(x => x.Language != null && x.Language.Equals(CSHARP)).Take(FIRST_FIVE_REPOS).ToList();
     }
 }
